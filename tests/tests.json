@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Calculate campaign performance metrics",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": ["metrics calculator", "CTR CPC CPM CPA and ROAS calculations"],
+    "description": "Verifies campaign inputs produce the expected performance metrics.",
+    "steps": [
+      "Open Metrics calculator",
+      "Enter spend 100, impressions 10000, clicks 500, conversions 10 and revenue 400",
+      "Review the calculated metrics"
+    ],
+    "expected": "CTR is 5.00%, CPC is $0.20, CPM is $10.00, CPA is $10.00 and ROAS is 4.00x."
+  },
+  {
+    "name": "Allocate a monthly media budget",
+    "viewport": "desktop",
+    "covers": ["budget planner", "platform allocation and daily pacing"],
+    "description": "Verifies platform allocations update from budget and percentage inputs.",
+    "steps": [
+      "Open Budget planner",
+      "Set monthly budget to 3000",
+      "Set Meta to 60%, Google to 30% and TikTok to 10%"
+    ],
+    "expected": "Meta allocation is $1,800, Google is $900, TikTok is $300, and the budget is fully allocated."
+  },
+  {
+    "name": "Build a campaign UTM link",
+    "viewport": "desktop",
+    "covers": [
+      "UTM builder",
+      "editable tracking parameters",
+      "copy generated URL"
+    ],
+    "description": "Verifies UTM inputs produce a correctly parameterized campaign URL.",
+    "steps": [
+      "Open UTM builder",
+      "Set source to newsletter and campaign to winter_launch",
+      "Review the generated URL and use Copy URL"
+    ],
+    "expected": "The generated URL contains utm_source=newsletter and utm_campaign=winter_launch, with visible copy confirmation."
+  },
+  {
+    "name": "Handle empty data on mobile",
+    "viewport": "mobile",
+    "covers": [
+      "zero-value calculation guardrails",
+      "responsive mobile layout",
+      "campaign analyzer empty state"
+    ],
+    "description": "Verifies zero inputs do not produce invalid numeric output and the mobile workflow remains usable.",
+    "steps": [
+      "Open Metrics calculator on mobile",
+      "Set all numeric inputs to zero",
+      "Open Campaign analyzer"
+    ],
+    "expected": "Metrics display zero values without NaN or Infinity, and the analyzer prompts for campaign data."
+  }
+]
